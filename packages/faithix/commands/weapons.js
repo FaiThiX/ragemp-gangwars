@@ -10,6 +10,7 @@ mp.events.addCommand("weapon", (player, _, weaponName, ammo = 9999) => {
     else{
         player.giveWeapon(mp.joaat(weaponName), Number(ammo));
         player.outputChatBox(`Gave ${weaponName} with ${ammo} ammo.`);
+        console.log(`[WEAPON] ${player.name}(${player.id}) gave himself ${weaponName} with ${ammo} ammo`)
     }
 });
 

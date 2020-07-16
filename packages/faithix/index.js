@@ -1,4 +1,4 @@
 require("./events/joinevents");
-require("");
+require("./commands/teleport");
 require("./commands/weapons");
 require("");
