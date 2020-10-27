@@ -26,11 +26,17 @@ mp.events.addCommand("team", (player, team) =>{
         player.outputChatBox("Folgende Teams gibt es: ")
         player.outputChatBox("gf, ballas, lsv, mnc, mg13")
         player.outputChatBox("lcn, triaden, yakuza")
-        console.log("failed")
     }
     else{
         player.currentTeam = team;
-        console.log("sucess")
+        player.position = teams[team].Spawnpos;
+        for(const val of teams[team].Clothes){
+            player.setClothes(Number(val.id), Number(val.drawable), Number(val.texture), 2)
+        }
+        for(const val of teams[team].Props){
+            player.setProp(Number(val.id), Number(val.drawable), Number(val.texture))
+        }
+        player.outputChatBox("Du bist jetzt im Team: " + teams[team].Teamname)
     }
 });
 

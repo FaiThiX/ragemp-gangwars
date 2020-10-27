@@ -166,12 +166,53 @@
             "y": 1292.3660888671875,
             "z": 360.2965393066406
         },
-        "Clothes":{
-
-        }
+        "Clothes":[
+            {
+                "id":1,
+                "drawable":51,
+                "textture":5
+            },    
+            {
+                "id":2,
+                "drawable":50,
+                "textture":0
+            },
+            {
+                "id":4,
+                "drawable":64,
+                "textture":9
+                },
+            {
+                "id":6,
+                "drawable":46,
+                "textture":6
+                },
+            {
+                "id":8,
+                "drawable":0,
+                "textture":-1
+                },
+            {
+                "id":11,
+                "drawable":143,
+                "textture":0
+            }
+        ],
+        "Props":[
+            {
+                "id": 0,
+                "drawable": 54,
+                "texture": 0
+            },
+            {
+                "id": 1,
+                "drawable": 8,
+                "texture": 1
+            }
+        ]
     },
     "mg13":{
-        "Teamname": "Marabunta",
+        "Teamname": "MG13",
         "color": 70,
         "Spawnpos":{
             "x": 1284.652587890625,
@@ -289,9 +330,50 @@
             "y": 1147.543212890625,
             "z": 113.75894165039062
         },
-        "Clothes":{
-
-        }
+        "Clothes":[
+            {
+                "id":1,
+                "drawable":51,
+                "textture":5
+            },    
+            {
+                "id":2,
+                "drawable":50,
+                "textture":0
+            },
+            {
+                "id":4,
+                "drawable":64,
+                "textture":9
+                },
+            {
+                "id":6,
+                "drawable":46,
+                "textture":6
+                },
+            {
+                "id":8,
+                "drawable":0,
+                "textture":-1
+                },
+            {
+                "id":11,
+                "drawable":143,
+                "textture":0
+            }
+        ],
+        "Props":[
+            {
+                "id": 0,
+                "drawable": 54,
+                "texture": 0
+            },
+            {
+                "id": 1,
+                "drawable": 8,
+                "texture": 1
+            }
+        ]
     },
     "yakuza":{
         "Teamname": "YaKuZa",
@@ -301,8 +383,49 @@
             "y": 857.5415649414062,
             "z": 181.54830932617188
         },
-        "Clothes":{
-
-        }
+        "Clothes":[
+            {
+                "id":1,
+                "drawable":51,
+                "textture":5
+            },    
+            {
+                "id":2,
+                "drawable":50,
+                "textture":0
+            },
+            {
+                "id":4,
+                "drawable":64,
+                "textture":9
+                },
+            {
+                "id":6,
+                "drawable":46,
+                "textture":6
+                },
+            {
+                "id":8,
+                "drawable":0,
+                "textture":-1
+                },
+            {
+                "id":11,
+                "drawable":143,
+                "textture":0
+            }
+        ],
+        "Props":[
+            {
+                "id": 0,
+                "drawable": 54,
+                "texture": 0
+            },
+            {
+                "id": 1,
+                "drawable": 8,
+                "texture": 1
+            }
+        ]
     }
 }

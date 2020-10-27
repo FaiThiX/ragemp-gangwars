@@ -1,25 +1,13 @@
 var sharedVariables = {
     localPlayer: mp.players.local,
-    drawUI: false,
-    drawFiringMode: false,
-    drawTurfUI: false,
     selectionActive: false,
-    garageActive: false,
-    teamName: "",
-    firingModeText: "",
-    moneyText: "",
-    moneyDiffText: "",
-    moneyDiffTime: 0,
-    killFeedItems: [],
-    currentVehicleText: "",
-    turfText: "",
-    killstreakText: "Killstreak: 0"
+    garageActive: false
 };
 
 
 const toLoad = [
     "scripts/welcome",
-    "scripts/death.js"
+    "scripts/death"
 ];
 
 
