@@ -1,3 +1,5 @@
+const teams = require("../team_config");
+
 mp.events.addCommand("warp",(player, point)=>{
     if(point === "lsia"){
         player.position = new mp.Vector3(-1147, -3149, 13.938328742980957)

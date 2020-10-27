@@ -17,3 +17,9 @@ mp.events.addCommand("weapon", (player, _, weaponName, ammo = 9999) => {
 mp.events.addCommand("dropguns",(player) =>{
     player.removeAllWeapons()
 })
+
+mp.events.addCommand("pos",(player) => {
+    player.outputChatBox(`${player.position}`);
+    console.log(player.position.x + ", " +  player.position.y + ", " + player.position.z);
+    return;
+});

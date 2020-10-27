@@ -1,0 +1,308 @@
+{
+    "gf":{
+        "Teamname": "Grove",
+        "color": 53,
+        "Spawnpos":{
+            "x": 1365.5870361328125,
+            "y": -579.159912109375,
+            "z": 74.38032531738281
+        },
+        "Clothes":[
+            {
+                "id":1,
+                "drawable":51,
+                "textture":5
+            },    
+            {
+                "id":2,
+                "drawable":50,
+                "textture":0
+            },
+            {
+                "id":4,
+                "drawable":64,
+                "textture":9
+                },
+            {
+                "id":6,
+                "drawable":46,
+                "textture":6
+                },
+            {
+                "id":8,
+                "drawable":0,
+                "textture":-1
+                },
+            {
+                "id":11,
+                "drawable":143,
+                "textture":0
+            }
+        ],
+        "Props":[
+            {
+                "id": 0,
+                "drawable": 54,
+                "texture": 0
+            },
+            {
+                "id": 1,
+                "drawable": 8,
+                "texture": 1
+            }
+        ]
+    },
+    "ballas":{
+        "Teamname": "Ballas",
+        "color": 145,
+        "Spawnpos":{
+            "x": 101.5816879272461,
+            "y": -1939.8582763671875,
+            "z": 20.80371856689453
+        },
+        "Clothes":[
+            {
+                "id":1,
+                "drawable":51,
+                "textture":5
+            },    
+            {
+                "id":2,
+                "drawable":50,
+                "textture":0
+            },
+            {
+                "id":4,
+                "drawable":64,
+                "textture":9
+                },
+            {
+                "id":6,
+                "drawable":46,
+                "textture":8
+                },
+            {
+                "id":8,
+                "drawable":0,
+                "textture":-1
+                },
+            {
+                "id":11,
+                "drawable":143,
+                "textture":0
+            }
+        ],
+        "Props":[
+            {
+                "id": 0,
+                "drawable": 54,
+                "texture": 0
+            },
+            {
+                "id": 1,
+                "drawable": 8,
+                "texture": 1
+            }
+        ]
+    },
+    "lsv":{
+        "Teamname": "Vagos",
+        "color": 88,
+        "Spawnpos":{
+            "x": -1070.043701171875,
+            "y": -1670.76123046875,
+            "z": 4.449466705322266
+        },
+        "Clothes":[
+            {
+                "id":1,
+                "drawable":51,
+                "textture":5
+            },    
+            {
+                "id":2,
+                "drawable":50,
+                "textture":0
+            },
+            {
+                "id":4,
+                "drawable":64,
+                "textture":9
+                },
+            {
+                "id":6,
+                "drawable":46,
+                "textture":6
+                },
+            {
+                "id":8,
+                "drawable":0,
+                "textture":-1
+                },
+            {
+                "id":11,
+                "drawable":143,
+                "textture":0
+            }
+        ],
+        "Props":[
+            {
+                "id": 0,
+                "drawable": 54,
+                "texture": 0
+            },
+            {
+                "id": 1,
+                "drawable": 8,
+                "texture": 1
+            }
+        ]
+    },
+    "mnc":{
+        "Teamname": "Midnight",
+        "color": 111,
+        "Spawnpos":{
+            "x": 738.7051391601562,
+            "y": 1292.3660888671875,
+            "z": 360.2965393066406
+        },
+        "Clothes":{
+
+        }
+    },
+    "mg13":{
+        "Teamname": "Marabunta",
+        "color": 70,
+        "Spawnpos":{
+            "x": 1284.652587890625,
+            "y": -1596.785400390625,
+            "z": 54.22522735595703
+        },
+        "Clothes":[
+        {
+            "id":1,
+            "drawable":87,
+            "textture":0
+        },    
+        {
+            "id":2,
+            "drawable":50,
+            "textture":0
+        },
+        {
+            "id":4,
+            "drawable":64,
+            "textture":5
+            },
+        {
+            "id":6,
+            "drawable":46,
+            "textture":0
+            },
+        {
+            "id":8,
+            "drawable":0,
+            "textture":-1
+            },
+        {
+            "id":11,
+            "drawable":16,
+            "textture":1
+        }
+    ],
+    "Props":[
+        {
+            "id":0,
+            "drawable":0,
+            "textture":-1
+        },
+        {
+            "id":1,
+            "drawable":0,
+            "textture":-1
+        }
+    ]
+    },
+    "lcn":{
+        "Teamname": "LCN",
+        "color": 0,
+        "Spawnpos":{
+            "x": -1526.486083984375,
+            "y": 93.47664642333984,
+            "z": 56.57822799682617
+        },
+        "Clothes":[
+            {
+                "id": 1,
+                "drawable": 51,
+                "texture": 3
+            },
+            {
+                "id": 2,
+                "drawable": 10,
+                "texture": 0
+            },
+            {
+                "id": 3,
+                "drawable": 33,
+                "texture": 0
+            },
+            {
+                "id": 4,
+                "drawable": 28,
+                "texture": 0
+            },
+            {
+                "id": 6,
+                "drawable": 36,
+                "texture": 3
+            },
+            {
+                "id": 8,
+                "drawable": 71,
+                "texture": 3
+            },
+            {
+                "id": 11,
+                "drawable": 154,
+                "texture": 0
+            }
+        ],
+        "Props":[
+            {
+                "id": 0,
+                "drawable": 61,
+                "texture": 9
+            },
+            {
+                "id": 1,
+                "drawable": 8,
+                "texture": 2
+            }
+        ]
+    },
+    "triaden":{
+        "Teamname": "Triaden",
+        "color": 82,
+        "Spawnpos":{
+            "x": 1369.94580078125,
+            "y": 1147.543212890625,
+            "z": 113.75894165039062
+        },
+        "Clothes":{
+
+        }
+    },
+    "yakuza":{
+        "Teamname": "YaKuZa",
+        "color": 31,
+        "Spawnpos":{
+            "x": -1534.52978515625,
+            "y": 857.5415649414062,
+            "z": 181.54830932617188
+        },
+        "Clothes":{
+
+        }
+    }
+}
