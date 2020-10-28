@@ -41,5 +41,5 @@ mp.events.add("closefrakbrowser:client", () =>{
         mp.gui.cursor.visible = false;
         mp.gui.chat.show(true);
         mp.events.callRemote("requestSpawn:server")
-    }, 600);
+    }, 300);
 })

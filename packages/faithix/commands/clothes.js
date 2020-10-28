@@ -15,3 +15,17 @@ mp.events.addCommand("prop",(player, _, componentId, drawable, texture) => {
     player.outputChatBox("Texture: " + texture)
     player.outputChatBox("All: " + componentId + " " + drawable + " " + texture)
 })
+
+mp.events.addCommand("export", (player) =>{
+    let clothes = [];
+    for(i=1; i<=11; i++){
+        let clothesobject = {}
+        let currentclothes = player.getClothes(i);
+        clothesobject.id = i;
+        clothesobject.drawable = currentclothes.drawable;
+        clothesobject.textture = currentclothes.texture;
+        clothes[i] = clothesobject;
+    }
+    clothes.filter(val => val);
+    console.log(JSON.stringify(clothes));
+});

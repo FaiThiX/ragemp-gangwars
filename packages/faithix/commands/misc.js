@@ -18,6 +18,7 @@ mp.events.addCommand("car",(player, vehName)=>{
         veh.setColor(teams[team].color, teams[team].color)
         veh.spawnedBy = player.name;
         veh.modelname = vehName;
+        player.putIntoVehicle(veh, -1);
     }
 });
 
@@ -38,20 +39,4 @@ mp.events.addCommand("team", (player, team) =>{
         }
         player.outputChatBox("Du bist jetzt im Team: " + teams[team].Teamname)
     }
-});
-
-mp.events.addCommand("export", (player) =>{
-    let clothes = [];
-    for(i=1; i<=11; i++){
-        if(player.getClothes(i).drawable === 255){continue}
-        let clothesobject = {}
-        let currentclothes = player.getClothes(i);
-        clothesobject.id = i;
-        clothesobject.drawable = currentclothes.drawable;
-        clothesobject.textture = currentclothes.texture;
-        if(player.getClothes(i).drawable === null){continue}
-        clothes[i] = clothesobject;
-    }
-    clothes.filter(val => val);
-    console.log(JSON.stringify(clothes));
 });
