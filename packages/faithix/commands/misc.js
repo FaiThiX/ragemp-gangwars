@@ -22,8 +22,10 @@ mp.events.addCommand("car",(player, vehName)=>{
     }
 });
 
-mp.events.addCommand("team", (player, team) =>{
-    if(undefined === teams[team]){
+mp.events.addCommand("team", (player) =>{
+    player.call("teamchange:client")
+    
+    /* if(undefined === teams[team]){
         player.outputChatBox("Folgende Teams gibt es: ")
         player.outputChatBox("gf, ballas, lsv, mnc, mg13")
         player.outputChatBox("lcn, triaden, yakuza")
@@ -38,5 +40,5 @@ mp.events.addCommand("team", (player, team) =>{
             player.setProp(Number(val.id), Number(val.drawable), Number(val.texture))
         }
         player.outputChatBox("Du bist jetzt im Team: " + teams[team].Teamname)
-    }
+    } */
 });

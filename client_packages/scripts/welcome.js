@@ -43,3 +43,19 @@ mp.events.add("closefrakbrowser:client", () =>{
         mp.events.callRemote("requestSpawn:server")
     }, 300);
 })
+
+mp.events.add("teamchange:client", () => {
+    sharedVariables.localPlayer.setCoords(cameraPos.x, cameraPos.y, cameraPos.z - 5.0, false, false, false, false);
+    sharedVariables.localPlayer.freezePosition(true);
+    sharedVariables.localPlayer.setAlpha(0)
+    sharedVariables.localPlayer.setInvincible(true)
+    accountCamera.setActive(true);
+    accountBrowser = mp.browsers.new("package://cef/welcome.html");
+
+    mp.gui.chat.show(false);
+    mp.game.ui.displayRadar(false);
+    mp.game.cam.renderScriptCams(true, false, 0, true, false);
+    setTimeout(function(){
+        mp.gui.cursor.show(false,true)
+    },150) 
+});
