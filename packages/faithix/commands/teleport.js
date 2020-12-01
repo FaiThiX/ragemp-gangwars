@@ -1,6 +1,5 @@
 const teams = require("../team_config");
 const crew = require("../team");
-const ffa = require("../ffapos")
 
 mp.events.addCommand("warp",(player, point)=>{
     if(point === "lsia"){
