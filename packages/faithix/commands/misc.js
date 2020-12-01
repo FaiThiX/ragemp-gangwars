@@ -22,10 +22,10 @@ mp.events.addCommand("car",(player, vehName)=>{
     }
 });
 
-mp.events.addCommand("team", (player) =>{
-    player.call("teamchange:client")
+mp.events.addCommand("team", (player, team) =>{
+    //player.call("teamchange:client")
     
-    /* if(undefined === teams[team]){
+    if(undefined === teams[team]){
         player.outputChatBox("Folgende Teams gibt es: ")
         player.outputChatBox("gf, ballas, lsv, mnc, mg13")
         player.outputChatBox("lcn, triaden, yakuza")
@@ -40,5 +40,17 @@ mp.events.addCommand("team", (player) =>{
             player.setProp(Number(val.id), Number(val.drawable), Number(val.texture))
         }
         player.outputChatBox("Du bist jetzt im Team: " + teams[team].Teamname)
-    } */
+    }
 });
+
+
+mp.events.addCommand("cleanup", (player) => {
+    mp.vehicles.forEach((vehicle) => { vehicle.destroy(); })
+    })
+
+    mp.events.addCommand('rep', (player) => {
+        if (player.vehicle)
+            player.vehicle.repair();
+        else
+            player.outputChatBox("Du befindest dich in keinem Fahrzeug!");
+    });

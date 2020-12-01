@@ -18,3 +18,13 @@ toLoad.forEach((file) => {
         mp.gui.chat.push(`Failed to load "${file}".`);
     }
 });
+
+//Waffendmg
+mp.game.ped.setAiWeaponDamageModifier(0.7);
+
+const date = new Date();
+
+function syncTime() {
+    mp.game.time.setClockTime(date.getHours(), date.getMinutes(), date.getSeconds());
+}
+setInterval(syncTime, 100);

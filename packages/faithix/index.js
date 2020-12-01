@@ -5,3 +5,4 @@ require("./commands/teleport");
 require("./commands/weapons");
 require("./commands/clothes");
 require("./commands/misc");
+

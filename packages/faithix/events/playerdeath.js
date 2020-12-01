@@ -2,6 +2,9 @@ const teams = require("../team_config");
 
 mp.events.add("playerDeath", (player, reason, killer) => {
     console.log("tot")
+    if(player.ffa = true){
+        player.spawn(mp.Vector3(201.74649047851562, -930.2860107421875, 30.691999435424805))
+    }
     if (player.respawnTimer) clearTimeout(player.respawnTimer);
     player.respawnTimer = setTimeout(() => {
         team = player.currentTeam;

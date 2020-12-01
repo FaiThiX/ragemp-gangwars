@@ -1,5 +1,6 @@
 const teams = require("../team_config");
 const crew = require("../team");
+const ffa = require("../ffapos")
 
 mp.events.addCommand("warp",(player, point)=>{
     if(point === "lsia"){
@@ -34,17 +35,19 @@ mp.events.addCommand("warp",(player, point)=>{
 })
 
 mp.events.addCommand('port', (player, name) => {
-    let thisplayer = player.name;
-    console.log(crew["teammember"].thisplayer);
-
-    if(crew["teammember"].thisplayer){
     mp.players.forEach(_player => {
         if(_player.name.toLowerCase() === name.toLowerCase())
             player.position = _player.position;
     });
     console.log("[PORT] " + player.name + " hat sich zu " + name + " teleportiert!");
-}});
+});
 
 mp.events.addCommand('dim', (player, dim) => {
     player.dimension = Number(dim)
+});
+
+mp.events.addCommand("ffa", (player) => {
+    player.position = new mp.Vector3(201.74649047851562, -930.2860107421875, 30.691999435424805)
+    player.dimension = 14;
+    player.ffa = true;
 });
