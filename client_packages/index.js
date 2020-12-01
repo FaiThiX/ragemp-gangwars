@@ -20,7 +20,7 @@ toLoad.forEach((file) => {
 });
 
 //Waffendmg
-mp.game.ped.setAiWeaponDamageModifier(0.7);
+mp.game.ped.setAiWeaponDamageModifier(0.8);
 
 const date = new Date();
 
