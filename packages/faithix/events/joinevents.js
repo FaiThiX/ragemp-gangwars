@@ -1,5 +1,5 @@
 mp.events.add('playerSpawn', (player) => {
-    player.giveWeapon([2937143193,],1000)
+    player.giveWeapon([2937143193,1649403952,1627465347,3523564046],1000)
     player.dimension = 0
 })
 
