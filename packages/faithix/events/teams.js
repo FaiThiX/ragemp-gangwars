@@ -19,19 +19,13 @@ mp.events.add("requestSpawn:server",(player)=>{
  })
 
 mp.events.add("heal", (player) => {
-    if(player.vehicle) return player.notify('~r~Im Auto Verbandskoffer ziehen?!');
-    if(player.healused >= 11) return player.notify('~r~Keine Verbandskästen mehr verfügbar');
+    
     player.health = 100;
-    player.notify('~g~Heal zum ' + player.healused + 'x benutzt');
-    player.healused = player.healused +=1;
     
 });
 
 mp.events.add("armor", (player) => {
-    if(player.vehicle) return player.notify('~r~Im Auto Rüstung ziehen?!');
-    if(player.armorused >= 6) return player.notify('~r~Keine Rüstung mehr verfügbar');
+    
     player.armour = 100;
-    player.notify('~g~Rüstung zum ' + player.armorused + 'x angelegt');
-    player.armorused = player.armorused +=1;
 });
 
