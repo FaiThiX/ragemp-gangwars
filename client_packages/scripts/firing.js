@@ -90,8 +90,8 @@ mp.keys.bind(0xBC, true, function() {
     mp.players.local.taskPlayAnim("amb@code_human_cower@male@idle_a", "idle_b", 8.0, 8.0, 4000, 1, 1.0, false, false, false);
     setTimeout(function(){
         mp.events.callRemote("heal");
-    },3000)
-    mp.game.graphics.notify('~g~Rüstung zum ' + healused + 'x angelegt')
+        mp.game.graphics.notify('~g~Rüstung zum ' + healused + 'x angelegt')
+    },4000)
     healused = healused += 1
 });
 
@@ -103,7 +103,7 @@ mp.keys.bind(0xBE, true, function() {
     mp.players.local.taskPlayAnim("anim@heists@narcotics@funding@gang_idle", "gang_chatting_idle01", 8.0, 8.0, 4000, 1, 1.0, false, false, false);
     setTimeout(function(){
         mp.events.callRemote("armor");
+        mp.game.graphics.notify('~g~Rüstung zum ' + armourused + 'x angelegt')
     },4000)
-    mp.game.graphics.notify('~g~Rüstung zum ' + armourused + 'x angelegt')
     armourused = armourused += 1
 });
