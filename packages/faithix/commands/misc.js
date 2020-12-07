@@ -27,8 +27,8 @@ mp.events.addCommand("team", (player, team) =>{
     
     if(undefined === teams[team]){
         player.outputChatBox("Folgende Teams gibt es: ")
-        player.outputChatBox("gf, ballas, lsv, mnc, mg13")
-        player.outputChatBox("lcn, triaden, yakuza")
+        player.outputChatBox("gf, ballas, lsv, rednecks, mg13")
+        player.outputChatBox("lcn, triaden, lost")
     }
     else{
         player.currentTeam = team;

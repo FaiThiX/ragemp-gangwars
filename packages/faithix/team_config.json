@@ -263,7 +263,7 @@
             }
         ]
     },
-    "mnc":{
+    "rednecks":{
         "Teamname": "Rednecks",
         "color": 133,
         "Spawnpos":{
@@ -600,7 +600,7 @@
             }
         ]
     },
-    "yakuza":{
+    "lost":{
         "Teamname": "Lost MC",
         "color": 31,
         "Spawnpos":{
