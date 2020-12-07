@@ -48,12 +48,12 @@ mp.events.addCommand("cleanup", (player) => {
     mp.vehicles.forEach((vehicle) => { vehicle.destroy(); })
     })
 
-    mp.events.addCommand('rep', (player) => {
-        if (player.vehicle)
-            player.vehicle.repair();
-        else
-            player.outputChatBox("Du befindest dich in keinem Fahrzeug!");
-    });
+mp.events.addCommand('rep', (player) => {
+    if (player.vehicle)
+        player.vehicle.repair();
+    else
+        player.outputChatBox("Du befindest dich in keinem Fahrzeug!");
+});
 
 mp.events.addCommand("respawn", (player) => {
     player.health = 0;
