@@ -5,8 +5,14 @@ const firingModes = {
     Safe: 3
 };
 
-var armourused = 1;
-var healused = 1;
+var armourused;
+var healused;
+
+mp.events.add("playerSpawn", () => {
+    armourused = 0;
+    healused = 0;
+});
+
 
 const firingModeNames = ["Auto", "Burst", "Single", "Safe"];
 
@@ -84,13 +90,13 @@ mp.events.add("render", () => {
 
 mp.keys.bind(0xBC, true, function() {
     if (mp.players.local.vehicle) return mp.game.graphics.notify('~r~Im Auto Verbandskoffer ziehen?!')
-    if (healused >= 11) return mp.game.graphics.notify('~r~Keine Verbandskästen mehr verfügbar')
+    if (healused >= 10) return mp.game.graphics.notify('~r~Keine Verbandskästen mehr verfügbar')
     curFiringMode = firingModes.Safe
     mp.game.streaming.requestAnimDict("amb@code_human_cower@male@idle_a"); //preload the animation
     mp.players.local.taskPlayAnim("amb@code_human_cower@male@idle_a", "idle_b", 8.0, 8.0, 4000, 1, 1.0, false, false, false);
     setTimeout(function(){
         mp.events.callRemote("heal");
-        mp.game.graphics.notify('~g~Rüstung zum ' + healused + 'x angelegt')
+        mp.game.graphics.notify('~g~Heal ' + healused + 'x benutzt')
     },4000)
     healused = healused += 1
 });
@@ -103,7 +109,7 @@ mp.keys.bind(0xBE, true, function() {
     mp.players.local.taskPlayAnim("anim@heists@narcotics@funding@gang_idle", "gang_chatting_idle01", 8.0, 8.0, 4000, 1, 1.0, false, false, false);
     setTimeout(function(){
         mp.events.callRemote("armor");
-        mp.game.graphics.notify('~g~Rüstung zum ' + armourused + 'x angelegt')
+        mp.game.graphics.notify('~g~Rüstung ' + armourused + 'x angelegt')
     },4000)
     armourused = armourused += 1
 });
