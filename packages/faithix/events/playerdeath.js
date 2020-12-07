@@ -1,7 +1,7 @@
 const teams = require("../team_config");
 
 mp.events.add("playerDeath", (player, reason, killer) => {
-    console.log(killer.name + " hat " + player.name + " getötet")
+    //console.log(killer.name + " hat " + player.name + " getötet")
     if (player.respawnTimer) clearTimeout(player.respawnTimer);
     player.respawnTimer = setTimeout(() => {
         team = player.currentTeam;

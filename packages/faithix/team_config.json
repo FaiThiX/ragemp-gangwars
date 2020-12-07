@@ -418,7 +418,7 @@
             {
                 "id":11,
                 "drawable":96,
-                "texture":3
+                "texture":0
             }
         ],
         "Props":[
@@ -460,8 +460,8 @@
         "Clothes":[
             {
                 "id": 1,
-                "drawable": 51,
-                "texture": 3
+                "drawable": 111,
+                "texture": 17
             },
             {
                 "id": 2,
@@ -611,23 +611,23 @@
         "Clothes":[
             {
                 "id":1,
-                "drawable":94,
+                "drawable":108,
                 "texture":0
             },    
             {
                 "id":2,
                 "drawable":0,
-                "texture":0
+                "texture":-1
             },
 			{
                 "id":3,
-                "drawable":17,
+                "drawable":1,
                 "texture":0
             },
             {
                 "id":4,
-                "drawable":24,
-                "texture":4
+                "drawable":97,
+                "texture":20
                 },
 				{
                 "id":5,
@@ -636,7 +636,7 @@
             },
             {
                 "id":6,
-                "drawable":10,
+                "drawable":24,
                 "texture":0
                 },
 				{
@@ -661,8 +661,8 @@
                 },
             {
                 "id":11,
-                "drawable":111,
-                "texture":1
+                "drawable":251,
+                "texture":20
             }
         ],
         "Props":[
