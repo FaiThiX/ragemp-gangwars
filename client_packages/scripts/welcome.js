@@ -60,4 +60,4 @@ mp.events.add("teamchange:client", () => {
     },150) 
 });
 
-mp.gui.chat.show(false)
+mp.gui.chat.activate(false);
