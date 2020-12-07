@@ -54,3 +54,7 @@ mp.events.addCommand("cleanup", (player) => {
         else
             player.outputChatBox("Du befindest dich in keinem Fahrzeug!");
     });
+
+mp.events.addCommand("respawn", (player) => {
+    player.health = 0;
+})
