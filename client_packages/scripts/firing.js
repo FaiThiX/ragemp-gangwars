@@ -91,13 +91,8 @@ mp.keys.bind(0xBC, true, function() {
 mp.keys.bind(0xBE, true, function() {
     curFiringMode = firingModes.Safe
     mp.game.streaming.requestAnimDict("anim@heists@narcotics@funding@gang_idle"); //preload the animation
-    mp.players.local.taskPlayAnim("anim@heists@narcotics@funding@gang_idle", "gang_chatting_idle01", 8.0, 1.0, 4000, 1, 1.0, false, false, false);
+    mp.players.local.taskPlayAnim("anim@heists@narcotics@funding@gang_idle", "gang_chatting_idle01", 8.0, 8.0, 4000, 1, 1.0, false, false, false);
     setTimeout(function(){
         mp.events.callRemote("armor");
     },4000)
 });
-
-mp.keys.bind(0x77, true, function(){
-    if (mp.gui.chat.show() === true){mp.gui.chat.show(false)};
-    if (mp.gui.chat.show() === false){mp.gui.chat.show(true)};
-})
