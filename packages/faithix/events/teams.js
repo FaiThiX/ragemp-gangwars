@@ -16,6 +16,7 @@ mp.events.add("requestSpawn:server",(player)=>{
     }
     player.armour = 100;
     player.health = 100;
+    player.isffa = 0;
  })
 
 mp.events.add("heal", (player) => {

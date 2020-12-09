@@ -6,3 +6,4 @@ require("./commands/weapons");
 require("./commands/clothes");
 require("./commands/misc");
 require("./scripts/garage");
+require("./events/ffa")

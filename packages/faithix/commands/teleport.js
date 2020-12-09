@@ -26,6 +26,9 @@ mp.events.addCommand("warp",(player, point)=>{
     else if(point === "1v1"){
         player.position = new mp.Vector3(-778, -770, 84.8985519409179)
     }
+    else if(point === "park"){
+        player.position = new mp.Vector3(196, -937, 31)
+    }
     else {
         player.outputChatBox("Mögliche Warppunkte:");
         player.outputChatBox("lsia, lcn, ballas, sandy,");
@@ -43,10 +46,4 @@ mp.events.addCommand('port', (player, name) => {
 
 mp.events.addCommand('dim', (player, dim) => {
     player.dimension = Number(dim)
-});
-
-mp.events.addCommand("ffa", (player) => {
-    player.position = new mp.Vector3(201.74649047851562, -930.2860107421875, 30.691999435424805)
-    player.dimension = 14;
-    player.ffa = true;
 });
