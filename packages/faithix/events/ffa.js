@@ -23,6 +23,7 @@ mp.events.addCommand("ffa", (player, ffanr) => {
     }
     if(ffanr === null || ffanr === undefined){
         player.notify("~q~~h~FFA Nummer angeben")
+        player.notify("~g~~h~Möglichkeiten: 1")
         return
     }
     ffanr = Number(ffanr);
