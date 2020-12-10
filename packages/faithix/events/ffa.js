@@ -9,6 +9,24 @@ function randomspawn(wffa){
     return randKey
 }
 
+let someColShape = mp.colshapes.newSphere(198.4713134765625, -936.09033203125, 24.13947868347168, 101, 1001);
+
+mp.markers.new(1, new mp.Vector3(198.4713134765625, -936.09033203125, 20.13947868347168), 200,
+    {
+        color: [224, 50, 50, 255],
+        visible: true,
+        dimension: 1001
+    });
+
+function playerExitColshapeHandler(player, shape) {
+  if(shape == someColShape) {
+    if(player.isffa === 1){
+        player.health = 0;
+    }
+  }
+}
+
+mp.events.add("playerExitColshape", playerExitColshapeHandler);
 
 mp.events.add("spawnffa:server", (player) => {
     spawn = randomspawn(player.whatffa);
@@ -26,22 +44,12 @@ mp.events.addCommand("ffa", (player, ffanr) => {
         player.notify("~g~~h~Möglichkeiten: 1")
         return
     }
-    ffanr = Number(ffanr);
-    player.isffa = 1;
-    player.whatffa = ffanr
-    mp.events.call("spawnffa:server", player);
-})
-
-mp.events.addCommand("wffa",(player) =>{
-    console.log(player.whatffa)
-})
-
-mp.events.addCommand("isffa",(player) =>{
-    console.log(player.isffa)
-})
-
-mp.events.addCommand("wdim", (player) =>{
-    console.log(player.dimension);
+    if(player.isffa === 0){
+        ffanr = Number(ffanr);
+        player.isffa = 1;
+        player.whatffa = ffanr
+        mp.events.call("spawnffa:server", player);
+    }
 })
 
 mp.events.addCommand("quitffa", (player) => {
@@ -53,5 +61,3 @@ mp.events.addCommand("quitffa", (player) => {
     player.dimension = 0;
     player.position = teams[player.currentTeam].Spawnpos
 })
-
-//119
