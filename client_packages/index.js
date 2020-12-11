@@ -76,3 +76,7 @@ mp.events.add("render", () => {
 
 });
 
+//F7 Clear Chat
+mp.keys.bind(0x76, true, function() {
+    mp.gui.chat.clear();
+});

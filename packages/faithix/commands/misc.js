@@ -8,17 +8,19 @@ mp.events.addCommand("pos",(player) => {
 });
 
 mp.events.addCommand("car",(player, vehName)=>{
-    if (player) {
-    let team = player.currentTeam;
-    let pos = player.position;
-    pos.x +=2;
-    let veh = mp.vehicles.new(mp.joaat(vehName),pos)
-        veh.dimension = player.dimension
-        veh.numberPlate = teams[team].Teamname;
-        veh.setColor(teams[team].color, teams[team].color)
-        veh.spawnedBy = player.name;
-        veh.modelname = vehName;
-        player.putIntoVehicle(veh, -1);
+    if(player.isffa === 0){
+        if (player) {
+            let team = player.currentTeam;
+            let pos = player.position;
+            pos.x +=2;
+            let veh = mp.vehicles.new(mp.joaat(vehName),pos)
+                veh.dimension = player.dimension
+                veh.numberPlate = teams[team].Teamname;
+                veh.setColor(teams[team].color, teams[team].color)
+                veh.spawnedBy = player.name;
+                veh.modelname = vehName;
+                player.putIntoVehicle(veh, -1);
+        }
     }
 });
 
