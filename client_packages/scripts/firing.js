@@ -97,6 +97,7 @@ mp.keys.bind(0xBC, true, function() {
     setTimeout(function(){
         mp.events.callRemote("heal");
         mp.game.graphics.notify('~g~Heal ' + healused + 'x benutzt')
+        curFiringMode = firingModes.Auto
     },4000)
     healused = healused += 1
 });
@@ -110,6 +111,7 @@ mp.keys.bind(0xBE, true, function() {
     setTimeout(function(){
         mp.events.callRemote("armor");
         mp.game.graphics.notify('~g~Rüstung ' + armourused + 'x angelegt')
+        curFiringMode = firingModes.Auto
     },4000)
     armourused = armourused += 1
 });
