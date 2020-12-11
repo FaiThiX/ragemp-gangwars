@@ -1,0 +1,113 @@
+{
+    "vehicles":{
+        "car":[
+            "revolter",
+            "jugular",
+            "schafterg",
+            "drafter",
+            "kuruma",
+            "bf400",
+            "bati"
+        ],
+        "heli":[
+            "supervolito",
+            "buzzard2"
+        ]
+    },
+    "grove":{
+        "spawnpoint_car":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "spawnpoint_heli":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "ballas":{
+        "spawnpoint_car":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "spawnpoint_heli":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "lsv":{
+        "spawnpoint_car":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "spawnpoint_heli":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "rednecks":{
+        "spawnpoint_car":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "spawnpoint_heli":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "mg13":{
+        "spawnpoint_car":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "spawnpoint_heli":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "lcn":{
+        "spawnpoint_car":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "spawnpoint_heli":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "triaden":{
+        "spawnpoint_car":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "spawnpoint_heli":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    },
+    "lost":{
+        "spawnpoint_car":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        },
+        "spawnpoint_heli":{
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    }
+}

@@ -1,3 +1,5 @@
+const garage_config = require("../garage_config.json")
+
 player.inshape = null;
 
 function entercolshapehandler(player,shape) {
@@ -29,27 +31,30 @@ let triadenheli = mp.colshapes.newSphere(-931, 217, 67.5, 3, 0);
 let lostheli = mp.colshapes.newSphere(-931, 217, 67.5, 3, 0);
 
 mp.events.add("whatgarage:server", (player) => {
-    if(player.inshape = grovecar){mp.events.call("garage", ["grovecar"])};
-    if(player.inshape = ballascar){mp.events.call("garage", ["ballascar"])};
-    if(player.inshape = lsvcar){mp.events.call("garage", ["lsvcar"])};
-    if(player.inshape = redneckscar){mp.events.call("garage", ["redneckscar"])};
-    if(player.inshape = mg13car){mp.events.call("garage", ["mg13car"])};
-    if(player.inshape = lcncar){mp.events.call("garage", ["lcncar"])};
-    if(player.inshape = triadencar){mp.events.call("garage", ["triadencar"])};
-    if(player.inshape = lostcar){mp.events.call("garage", ["lostcar"])};
-    if(player.inshape = groveheli){mp.events.call("garage", ["groveheli"])};
-    if(player.inshape = ballasheli){mp.events.call("garage", ["ballasheli"])};
-    if(player.inshape = lsvheli){mp.events.call("garage", ["lsvheli"])};
-    if(player.inshape = rednecksheli){mp.events.call("garage", ["rednecksheli"])};
-    if(player.inshape = mg13heli){mp.events.call("garage", ["mg13heli"])};
-    if(player.inshape = lcnheli){mp.events.call("garage", ["lcnheli"])};
-    if(player.inshape = triadenheli){mp.events.call("garage", ["triadenheli"])};
-    if(player.inshape = lostheli){mp.events.call("garage", ["lostheli"])};
+    if(player.inshape = grovecar){mp.events.call("garage", ["grovecar", "car"])};
+    if(player.inshape = ballascar){mp.events.call("garage", ["ballascar", "car"])};
+    if(player.inshape = lsvcar){mp.events.call("garage", ["lsvcar", "car"])};
+    if(player.inshape = redneckscar){mp.events.call("garage", ["redneckscar", "car"])};
+    if(player.inshape = mg13car){mp.events.call("garage", ["mg13car", "car"])};
+    if(player.inshape = lcncar){mp.events.call("garage", ["lcncar", "car"])};
+    if(player.inshape = triadencar){mp.events.call("garage", ["triadencar", "car"])};
+    if(player.inshape = lostcar){mp.events.call("garage", ["lostcar", "car"])};
+    if(player.inshape = groveheli){mp.events.call("garage", ["groveheli", "heli"])};
+    if(player.inshape = ballasheli){mp.events.call("garage", ["ballasheli", "heli"])};
+    if(player.inshape = lsvheli){mp.events.call("garage", ["lsvheli", "heli"])};
+    if(player.inshape = rednecksheli){mp.events.call("garage", ["rednecksheli", "heli"])};
+    if(player.inshape = mg13heli){mp.events.call("garage", ["mg13heli", "heli"])};
+    if(player.inshape = lcnheli){mp.events.call("garage", ["lcnheli", "heli"])};
+    if(player.inshape = triadenheli){mp.events.call("garage", ["triadenheli", "heli"])};
+    if(player.inshape = lostheli){mp.events.call("garage", ["lostheli", "heli"])};
 })
 
 mp.events.add("playerEnteColshape", entercolshapehandler);
 mp.events.add("playerExitColshape", leavecolshapehandler);
 
 mp.events.add("garage", (garage, type) => {
+    if(type == "car"){}
+    if(type == "heli"){}
 
+    mp.events.call("opengarage:client", cars)
 })
