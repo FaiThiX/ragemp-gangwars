@@ -29,7 +29,7 @@ mp.events.add("playerDeath", (player, reason, killer) => {
 })
 
 mp.events.add("playerDeath", (player, reason, killer) => {
-    let msg = `${player.name} died`;
+    let msg = `${player.name} ist gestorben`;
 
     if (killer) {
         if (killer.name == player.name) {
