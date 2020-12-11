@@ -9,7 +9,8 @@ var sharedVariables = {
 const toLoad = [
     "scripts/welcome",
     "scripts/death",
-    "scripts/firing"
+    "scripts/firing",
+    "scripts/killfeed"
 ];
 
 
