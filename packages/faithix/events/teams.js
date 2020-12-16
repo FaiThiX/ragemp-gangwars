@@ -20,13 +20,32 @@ mp.events.add("requestSpawn:server",(player)=>{
  })
 
 mp.events.add("heal", (player) => {
-    
+    const dist = "amb@code_human_cower@male@idle_a";
+    const name = "idle_b";
+    const speed = 4000;
+    const flag = 1;
+    if (player.vehicle) return player.notify('~r~Im Auto Rüstung ziehen?!')
+    if (player.healused >= 10) return player.notify('~r~Keine Rüstung mehr verfügbar')
     player.health = 100;
-    
+    player.playAnimation(dist, name, speed, flag);
+    player.setVariable("animData", `${dist}%${name}%${flag}`);
+    player.stopAnimation()
+    player.setVariable("animData", null);
+    player.healused = player.healused += 1
 });
 
 mp.events.add("armor", (player) => {
-    
-    player.armour = 100;
-});
+    const dist = "anim@heists@narcotics@funding@gang_idle";
+    const name = "gang_chatting_idle01";
+    const speed = 4000;
+    const flag = 1;
 
+    if (player.vehicle) return player.notify('~r~Im Auto Rüstung ziehen?!')
+    if (player.armourused >= 6) return player.notify('~r~Keine Rüstung mehr verfügbar')
+    player.armour = 100;
+    player.playAnimation(dist, name, speed, flag);
+    player.setVariable("animData", `${dist}%${name}%${flag}`);
+    player.stopAnimation()
+    player.setVariable("animData", null);
+    player.armourused = player.armourused += 1
+});

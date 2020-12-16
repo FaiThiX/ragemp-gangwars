@@ -7,7 +7,7 @@ mp.events.addCommand("pos",(player) => {
     return;
 });
 
-mp.events.addCommand("car",(player, vehName)=>{
+mp.events.addCommand("car",(player, vehName = "oracle")=>{
     if(player.isffa === 0){
         if (player) {
             let team = player.currentTeam;

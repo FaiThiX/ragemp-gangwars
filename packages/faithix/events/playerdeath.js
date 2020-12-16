@@ -3,6 +3,9 @@ const teams = require("../team_config");
 mp.events.add("playerDeath", (player, reason, killer) => {
     if (player.respawnTimer) clearTimeout(player.respawnTimer);
 
+    player.armourused = 0;
+    player.healused = 0;
+
     if (player.isffa === 1){
 
         player.respawnTimer = setTimeout(() => {
