@@ -8,6 +8,8 @@ mp.events.add("playerDeath", (player, reason, killer) => {
 
     if (player.isffa === 1){
 
+        killer.health = 100;
+        killer.armour = 100;
         player.respawnTimer = setTimeout(() => {
             mp.events.call("spawnffa:server", player);
             player.health = 100;
