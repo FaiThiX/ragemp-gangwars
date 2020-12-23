@@ -34,25 +34,21 @@ mp.events.add("spawnffa:server", (player) => {
     player.spawn(ffa[player.whatffa][spawn]);
 })
 
-mp.event.addCommand("test", (player) => {
-    
-})
-
 mp.events.addCommand("ffa", (player, ffanr) => {
-    if(player.isffa === 1){
-        player.notify("~r~~h~Du bist bereits im FFA")
-        return
+    if(player.isffa === 0){
+        ffanr = Number(ffanr);
+        player.isffa = 1;
+        player.whatffa = ffanr
+        mp.events.call("spawnffa:server", player);
     }
     if(ffanr === null || ffanr === undefined){
         player.notify("~q~~h~FFA Nummer angeben")
         player.notify("~g~~h~Möglichkeiten: 1")
         return
     }
-    if(player.isffa === 0){
-        ffanr = Number(ffanr);
-        player.isffa = 1;
-        player.whatffa = ffanr
-        mp.events.call("spawnffa:server", player);
+    if(player.isffa === 1){
+        player.notify("~r~~h~Du bist bereits im FFA")
+        return
     }
 })
 

@@ -33,5 +33,3 @@ function loadAnimDict(a, b) {
         mp.game.streaming.hasAnimDictLoaded(a) && (clearInterval(c), b())
     }, 100)
 }
-
-//Jack Cartin
