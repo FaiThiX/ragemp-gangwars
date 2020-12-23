@@ -6,4 +6,7 @@ mp.events.add("playerJoin", (player) => {
     console.log(`[JOIN] ${player.name} joined. (ID: ${player.id} - SC: ${player.socialClub} - ${player.ip})`);
     player.dimension = 0
     player.isffa = 0
+    player.inshape = null;
+    player.armourused = 0;
+    player.healused = 0;
 });

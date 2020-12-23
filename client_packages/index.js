@@ -10,7 +10,8 @@ const toLoad = [
     "scripts/welcome",
     "scripts/death",
     "scripts/firing",
-    "scripts/killfeed"
+    "scripts/killfeed",
+    "scripts/animsync"
 ];
 
 

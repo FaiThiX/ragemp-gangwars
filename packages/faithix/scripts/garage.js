@@ -1,7 +1,5 @@
 const garage_config = require("../garage_config.json")
 
-player.inshape = null;
-
 function entercolshapehandler(player,shape) {
     player.inshape = shape;
     console.log(shape);

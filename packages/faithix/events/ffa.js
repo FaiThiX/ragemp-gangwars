@@ -34,6 +34,10 @@ mp.events.add("spawnffa:server", (player) => {
     player.spawn(ffa[player.whatffa][spawn]);
 })
 
+mp.event.addCommand("test", (player) => {
+    
+})
+
 mp.events.addCommand("ffa", (player, ffanr) => {
     if(player.isffa === 1){
         player.notify("~r~~h~Du bist bereits im FFA")
