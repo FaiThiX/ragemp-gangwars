@@ -3,31 +3,26 @@ const teams = require("../team_config");
 mp.events.add("playerDeath", (player, reason, killer) => {
     if (player.respawnTimer) clearTimeout(player.respawnTimer);
 
-    player.armourused = 0;
-    player.healused = 0;
+    if(player.cayo = true){
+        player.spawn(new mp.Vector3(4840.571, -5174.425, 2.0))
+    }
 
     if (player.isffa === 1){
 
         killer.health = 100;
         killer.armour = 100;
         player.respawnTimer = setTimeout(() => {
-            mp.events.call("spawnffa:server", player);
-            player.health = 100;
-            player.armour = 100;
-    
+            mp.events.call("spawnffa:server", player);    
             clearTimeout(player.respawnTimer);
             player.respawnTimer = undefined;
-            return
+            return;
         }, 8000);
     }
 
     player.respawnTimer = setTimeout(() => {
         team = player.currentTeam;
         player.spawn(teams[team].Spawnpos);
-        player.health = 100;
-        player.armour = 100;
         player.dimension = 0;
-
         clearTimeout(player.respawnTimer);
         player.respawnTimer = undefined;
     }, 8000);

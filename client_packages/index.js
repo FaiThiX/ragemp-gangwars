@@ -11,7 +11,8 @@ const toLoad = [
     "scripts/death",
     "scripts/firing",
     "scripts/killfeed",
-    "scripts/animsync"
+    "scripts/animsync",
+    "scripts/cayo"
 ];
 
 

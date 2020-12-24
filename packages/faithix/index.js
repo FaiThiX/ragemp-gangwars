@@ -1,9 +1,10 @@
+require("./commands/clothes");
+require("./commands/misc");
+require("./commands/teleport");
+require("./commands/weapons");
 require("./events/joinevents");
 require("./events/playerdeath");
 require("./events/teams");
-require("./commands/teleport");
-require("./commands/weapons");
-require("./commands/clothes");
-require("./commands/misc");
+require("./scripts/ffa");
 require("./scripts/garage");
-require("./events/ffa")
+require("./scripts/healing");

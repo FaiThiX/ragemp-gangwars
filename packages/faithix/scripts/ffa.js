@@ -22,9 +22,9 @@ function playerExitColshapeHandler(player, shape) {
   if(shape == someColShape) {
     if(player.isffa === 1){
         player.health = 0;
-    }
-  }
-}
+    };
+  };
+};
 
 mp.events.add("playerExitColshape", playerExitColshapeHandler);
 
@@ -32,32 +32,32 @@ mp.events.add("spawnffa:server", (player) => {
     spawn = randomspawn(player.whatffa);
     player.dimension = player.whatffa + 1000;
     player.spawn(ffa[player.whatffa][spawn]);
-})
+});
 
 mp.events.addCommand("ffa", (player, ffanr) => {
     if(player.isffa === 0){
         ffanr = Number(ffanr);
         player.isffa = 1;
-        player.whatffa = ffanr
+        player.whatffa = ffanr;
         mp.events.call("spawnffa:server", player);
-    }
+    };
     if(ffanr === null || ffanr === undefined){
-        player.notify("~q~~h~FFA Nummer angeben")
-        player.notify("~g~~h~Möglichkeiten: 1")
-        return
-    }
+        player.notify("~q~~h~FFA Nummer angeben");
+        player.notify("~g~~h~Möglichkeiten: 1");
+        return;
+    };
     if(player.isffa === 1){
-        player.notify("~r~~h~Du bist bereits im FFA")
-        return
-    }
+        player.notify("~r~~h~Du bist bereits im FFA");
+        return;
+    };
 })
 
 mp.events.addCommand("quitffa", (player) => {
     if(player.isffa === 0){
         player.notify("~o~~h~Du bist nicht im FFA"); 
-        return
-    }
+        return;
+    };
     player.isffa = 0;
     player.dimension = 0;
-    player.position = teams[player.currentTeam].Spawnpos
+    player.position = teams[player.currentTeam].Spawnpos;
 })

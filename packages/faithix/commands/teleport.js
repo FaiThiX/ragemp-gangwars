@@ -47,3 +47,18 @@ mp.events.addCommand('port', (player, name) => {
 mp.events.addCommand('dim', (player, dim) => {
     player.dimension = Number(dim)
 });
+
+mp.events.addCommand("cayo", (player) =>{
+    if(player.cayo == true){
+        player.call("load_cayo:client", ([false]));
+        player.cayo = false;
+        player.position = teams[player.currentTeam].Spawnpos;
+        return;
+    };
+    if(player.cayo == false){
+        player.call("load_cayo:client", ([true]));
+        player.cayo = true;
+        player.position = new mp.Vector3(4840.571, -5174.425, 2.0);
+        return;
+    }
+})

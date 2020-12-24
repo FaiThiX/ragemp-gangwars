@@ -1,28 +1,30 @@
 const teams = require("../team_config");
 
-
 mp.events.addCommand("pos",(player) => {
     player.outputChatBox(`${player.position}`);
     console.log(player.position.x + ", " +  player.position.y + ", " + player.position.z);
     return;
 });
 
-mp.events.addCommand("car",(player, vehName = "oracle")=>{
+mp.events.addCommand("car",(player, vehName = "faggio")=>{
     if(player.isffa === 0){
         if (player) {
-            let team = player.currentTeam;
             let pos = player.position;
-            pos.x +=2;
             let veh = mp.vehicles.new(mp.joaat(vehName),pos)
-                veh.dimension = player.dimension
-                veh.numberPlate = teams[team].Teamname;
-                veh.setColor(teams[team].color, teams[team].color)
+                veh.dimension = player.dimension;
+                veh.numberPlate = teams[player.currentTeam].Teamname;
+                veh.setColor(teams[player.currentTeam].color, teams[player.currentTeam].color);
                 veh.spawnedBy = player.name;
                 veh.modelname = vehName;
                 player.putIntoVehicle(veh, -1);
         }
     }
 });
+
+mp.events.addCommand("vrot", (player) => {
+    let veh = player.vehicle;
+    console.log(veh.rotation);
+})
 
 mp.events.addCommand("team", (player, team) =>{
     //player.call("teamchange:client")
