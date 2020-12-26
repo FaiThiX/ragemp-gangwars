@@ -1,3 +1,4 @@
+require("./corestuff/mysql");
 require("./commands/clothes");
 require("./commands/misc");
 require("./commands/teleport");

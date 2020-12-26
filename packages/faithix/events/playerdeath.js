@@ -9,8 +9,15 @@ mp.events.add("playerDeath", (player, reason, killer) => {
 
     if (player.isffa === 1){
 
-        killer.health = 100;
-        killer.armour = 100;
+        if(killer.id !== player.id){
+            killer.health = 100;
+            killer.armour = 100;
+            player.deaths = player.deaths += 1;
+            killer.kills = killer.kills += 1;
+        };
+        if (killer.id === player.id){
+            player.deaths = player.deaths += 1;
+        };
         player.respawnTimer = setTimeout(() => {
             mp.events.call("spawnffa:server", player);    
             clearTimeout(player.respawnTimer);
@@ -20,8 +27,15 @@ mp.events.add("playerDeath", (player, reason, killer) => {
     }
 
     player.respawnTimer = setTimeout(() => {
-        team = player.currentTeam;
-        player.spawn(teams[team].Spawnpos);
+        if (killer.id === player.id){
+            player.deaths = player.deaths += 1;
+        };
+        if (killer.id !== player.id){
+            player.deaths = player.deaths += 1;
+            killer.kills = killer.kills += 1;
+        };
+
+        player.spawn(teams[player.currentTeam].Spawnpos);
         player.dimension = 0;
         clearTimeout(player.respawnTimer);
         player.respawnTimer = undefined;
