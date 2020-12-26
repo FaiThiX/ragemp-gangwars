@@ -1,5 +1,6 @@
 const teams = require("../team_config");
 const ffa = require("../ffa");
+const database = require("../corestuff/mysql").getPool();
 
 function randomspawn(wffa){
     wffa = Number(wffa)
@@ -50,7 +51,7 @@ mp.events.addCommand("ffa", (player, ffanr) => {
         player.notify("~r~~h~Du bist bereits im FFA");
         return;
     };
-})
+});
 
 mp.events.addCommand("quitffa", (player) => {
     if(player.isffa === 0){
@@ -60,4 +61,4 @@ mp.events.addCommand("quitffa", (player) => {
     player.isffa = 0;
     player.dimension = 0;
     player.position = teams[player.currentTeam].Spawnpos;
-})
+});

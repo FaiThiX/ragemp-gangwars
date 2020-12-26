@@ -5,7 +5,7 @@ module.exports = {
       if (pool) return pool;
       pool = mysql.createPool({
         host: 'localhost',
-        user: 'faithix',
+        user: 'youruser',
         password: 'yourpassword',
         database: 'gangwar'
     });
