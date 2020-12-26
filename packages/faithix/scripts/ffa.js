@@ -1,5 +1,4 @@
 const teams = require("../team_config");
-const ffa = require("../ffa");
 const database = require("../corestuff/mysql").getPool();
 
 function randomspawn(wffa){
@@ -9,6 +8,20 @@ function randomspawn(wffa){
     const randKey = keys[randIndex]
     return randKey
 }
+
+var ffa = {};
+
+database.query("SELECT * FROM ffa_spawns", (error, result) => {
+    if(error) throw error;
+    
+    result.forEach(element => {
+        if(ffa[element.ffa] === undefined){
+            ffa[element.ffa] = [];
+        };
+        ffa[element.ffa].push(element);
+    });
+});
+
 
 let someColShape = mp.colshapes.newSphere(198.4713134765625, -936.09033203125, 24.13947868347168, 101, 1001);
 
