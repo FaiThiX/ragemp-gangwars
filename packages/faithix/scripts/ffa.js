@@ -1,6 +1,10 @@
 const teams = require("../team_config");
 const database = require("../corestuff/mysql").getPool();
 
+var ffa = {}
+var markers = {}
+var colshapes = {}
+
 function randomspawn(wffa){
     wffa = Number(wffa)
     const keys = Object.keys(ffa[wffa])
@@ -9,8 +13,8 @@ function randomspawn(wffa){
     return randKey
 }
 
-var ffa = {};
 
+// Create ffa json object in cache for later use
 database.query("SELECT * FROM ffa_spawns", (error, result) => {
     if(error) throw error;
     
@@ -22,15 +26,21 @@ database.query("SELECT * FROM ffa_spawns", (error, result) => {
     });
 });
 
-
+//eval('let colshape' + element.id) = 
 let someColShape = mp.colshapes.newSphere(198.4713134765625, -936.09033203125, 24.13947868347168, 101, 1001);
 
-mp.markers.new(1, new mp.Vector3(198.4713134765625, -936.09033203125, 20.13947868347168), 200,
-    {
-        color: [224, 50, 50, 255],
-        visible: true,
-        dimension: 1001
+//Marker loader from SQL
+database.query("SELECT * FROM markers", (error, result) => {
+    if(error) throw error;
+
+    result.forEach(element => {
+        mp.markers.new(element.type, new mp.Vector3(element.x, element.y, element.z - 4), element.radius,{
+            color: [element.r, element.g, element.g, element.a],
+            visible: true,
+            dimension: element.dim
+        });
     });
+});
 
 function playerExitColshapeHandler(player, shape) {
   if(shape == someColShape) {
