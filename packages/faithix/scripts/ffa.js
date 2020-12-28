@@ -35,7 +35,7 @@ database.query("SELECT * FROM markers", (error, result) => {
 
     result.forEach(element => {
         mp.markers.new(element.type, new mp.Vector3(element.x, element.y, element.z - 4), element.radius,{
-            color: [element.r, element.g, element.g, element.a],
+            color: [element.r, element.g, element.b, element.a],
             visible: true,
             dimension: element.dim
         });

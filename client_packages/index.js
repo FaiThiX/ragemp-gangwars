@@ -1,5 +1,3 @@
-require('_rage-console');
-
 var sharedVariables = {
     localPlayer: mp.players.local,
     selectionActive: false,
