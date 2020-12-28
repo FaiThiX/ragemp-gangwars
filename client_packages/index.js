@@ -1,3 +1,5 @@
+require('_rage-console');
+
 var sharedVariables = {
     localPlayer: mp.players.local,
     selectionActive: false,
@@ -12,7 +14,8 @@ const toLoad = [
     "scripts/firing",
     "scripts/killfeed",
     "scripts/animsync",
-    "scripts/cayo"
+    "scripts/cayo",
+    "scripts/misc"
 ];
 
 

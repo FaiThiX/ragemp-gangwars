@@ -60,10 +60,14 @@ mp.events.add("spawnffa:server", (player) => {
 
 mp.events.addCommand("ffa", (player, ffanr) => {
     if(player.isffa === 0){
-        ffanr = Number(ffanr);
-        player.isffa = 1;
-        player.whatffa = ffanr;
-        mp.events.call("spawnffa:server", player);
+        if(ffanr === "1"){
+            ffanr = Number(ffanr);
+            player.isffa = 1;
+            player.whatffa = ffanr;
+            mp.events.call("spawnffa:server", player);
+            return;
+        }
+    return;
     };
     if(ffanr === null || ffanr === undefined){
         player.notify("~q~~h~FFA Nummer angeben");

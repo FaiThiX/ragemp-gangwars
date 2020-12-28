@@ -3,7 +3,7 @@ const teams = require("../team_config");
 mp.events.add("playerDeath", (player, reason, killer) => {
     if (player.respawnTimer) clearTimeout(player.respawnTimer);
 
-    if(player.cayo = true){
+    if(player.cayo === true){
         player.respawnTimer = setTimeout(() => {
             player.spawn(new mp.Vector3(4840.571, -5174.425, 2.0));
             clearTimeout(player.respawnTimer);

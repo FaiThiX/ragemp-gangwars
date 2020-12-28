@@ -1,4 +1,5 @@
 const teams = require("../team_config");
+const database = require("../corestuff/mysql").getPool();
 
 mp.events.addCommand("pos",(player) => {
     player.outputChatBox(`${player.position}`);
@@ -50,7 +51,7 @@ mp.events.addCommand("team", (player, team) =>{
 
 mp.events.addCommand("cleanup", (player) => {
     mp.vehicles.forEach((vehicle) => { vehicle.destroy(); })
-    })
+});
 
 mp.events.addCommand('rep', (player) => {
     if (player.vehicle)
@@ -62,3 +63,16 @@ mp.events.addCommand('rep', (player) => {
 mp.events.addCommand("respawn", (player) => {
     player.health = 0;
 })
+
+mp.events.addCommand("loadmarker", (player, ffa) => {
+    if(player.admin > 6){
+        database.query("SELECT * FROM ffa_spawns WHERE ffa=?", [ffa], (error, result) => {
+            if(error) throw error;
+
+            result.forEach(element => {
+                mp.events.call("loadmarker:client", (element));
+                console.log(element);
+            });
+        });
+    };
+});

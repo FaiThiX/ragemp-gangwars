@@ -1,0 +1,12 @@
+{
+  "name": "rage-console",
+  "author": "Kasimir",
+  "description": "Console for RAGE Multiplayer",
+  "version": "0.3.0",
+  "dependencies": {
+    "winston": "2.4.1",
+    "winston-transport": "3.0.1",
+    "util": "0.10.3",
+    "winston-daily-rotate-file": "3.0.1"
+  }
+}
