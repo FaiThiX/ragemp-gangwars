@@ -14,27 +14,26 @@ mp.events.add("playerJoin", (player) => {
     console.log(`[JOIN] ${player.name} joined. (ID: ${player.id} - SC: ${player.socialClub} - ${player.ip})`);
     database.query("SELECT * FROM users WHERE socialclub=?", [player.socialClub], (error, result) => {
         if(error) throw error;
-
         if(result[0] === undefined || result[0] === null){
             // Create new user in Database
-            database.query("INSERT INTO users SET socialclub=?, lastlogin=?", [player.socialClub, formatdate]);
+            database.query("INSERT INTO users SET socialclub=?", [player.socialClub]);
             player.kills = 0;
             player.deaths = 0;
             player.admin = 0;
             database.query("SELECT * FROM users WHERE socialclub=?", [player.socialClub], (error, result) => {
                 player.sqlid = result[0].id;
             });
-            console.log("Created SQL User for " + player.name);
+            console.info("Created SQL User for " + player.name);
         };
 
-        if(result.lenght === 1){
+        if(result[0].id){
             //Load user from Database
             database.query("UPDATE users SET lastlogin=? WHERE socialclub=?", [formatdate, player.socialClub]);
             player.kills = result[0].kills;
             player.deaths = result[0].deaths;
             player.admin = result[0].admin;
             player.sqlid = result[0].id;
-            console.log("Loaded SQL user with name " + player.name);
+            console.info("Loaded SQL user for " + player.name);
         };
     });
     
