@@ -78,14 +78,13 @@ mp.events.addCommand("loadmarker", (player, ffa) => {
 
 mp.events.addCommand("setspawn", (player, ffa) => {
     database.query("INSERT INTO ffa_spawns SET ffa=?, x=?, y=?, z=?", [ffa, player.position.x, player.position.y, player.position.z]);
+    
     var element = {};
     
     element.ffa = ffa;
     element.x = player.position.x;
     element.y = player.position.y;
     element.z = player.position.z;
-
-    console.log(element);
 
     player.call("loadmarker:client", [element]);
 });

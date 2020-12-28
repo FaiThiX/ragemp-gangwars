@@ -67,13 +67,13 @@ mp.events.addCommand("ffa", (player, ffanr) => {
             mp.events.call("spawnffa:server", player);
             return;
         }
-    return;
-    };
-    if(ffanr === null || ffanr === undefined){
-        player.notify("~q~~h~FFA Nummer angeben");
-        player.notify("~g~~h~Möglichkeiten: 1");
+        else{
+            player.notify("~q~~h~FFA Nummer angeben");
+            player.notify("~g~~h~Möglichkeiten: 1");
         return;
+        }
     };
+    
     if(player.isffa === 1){
         player.notify("~r~~h~Du bist bereits im FFA");
         return;
