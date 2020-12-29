@@ -2,8 +2,8 @@ const teams = require("../team_config");
 const database = require("../corestuff/mysql").getPool();
 
 mp.events.addCommand("pos",(player) => {
-    player.outputChatBox(`${player.position}`);
-    console.log(player.position.x + ", " +  player.position.y + ", " + player.position.z);
+    player.outputChatBox(`${player.position} + ${player.heading}`);
+    console.log(player.position.x + ", " +  player.position.y + ", " + player.position.z + ", " + player.heading);
     return;
 });
 
