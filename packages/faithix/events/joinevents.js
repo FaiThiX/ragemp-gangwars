@@ -11,6 +11,17 @@ mp.events.add('playerSpawn', (player) => {
 })
 
 mp.events.add("playerJoin", (player) => {
+    database.query("SELECT * FROM npc", (error, result) => {
+        if(error) throw error;
+
+        for(let i = 0; i < result.length; i++){
+            player.call("loadnpcs:client", [result[i]]);
+        }
+    });
+});
+
+
+mp.events.add("playerJoin", (player) => {
     console.log(`[JOIN] ${player.name} joined. (ID: ${player.id} - SC: ${player.socialClub} - ${player.ip})`);
     database.query("SELECT * FROM users WHERE socialclub=?", [player.socialClub], (error, result) => {
         if(error) throw error;
