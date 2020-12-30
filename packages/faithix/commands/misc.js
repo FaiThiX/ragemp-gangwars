@@ -88,3 +88,7 @@ mp.events.addCommand("setspawn", (player, ffa) => {
 
     player.call("loadmarker:client", [element]);
 });
+
+mp.events.addCommand("removemarker",(player) => {
+    player.call("removemarker:client");
+});
