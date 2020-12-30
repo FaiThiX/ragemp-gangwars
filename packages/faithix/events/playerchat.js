@@ -1,4 +1,4 @@
-const teamdata = require("../team_config.json")
+const teamdata = require("../team_config.json");
 
 let teamColor = player.currentTeam ? teamdata[player.currentTeam].chatcolor : "#FFFFFF";
 
