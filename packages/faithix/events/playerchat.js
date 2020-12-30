@@ -5,4 +5,4 @@ let teamColor = player.currentTeam ? teamdata[player.currentTeam].chatcolor : "#
 mp.events.add("playerChat", (player, message) => {
     if(player.health <= 0) return;
     mp.players.broadcast(`!{${teamColor}}${player.name}: !{#FFFFFF}${message}`);
-})
+});
