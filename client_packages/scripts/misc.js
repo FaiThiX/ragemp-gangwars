@@ -1,14 +1,20 @@
-var markers = 0;
+const markers = [];
+const player = mp.players.local;
+
 mp.events.add("loadmarker:client", (element) => {
-    
-    let marker = "let marker" + element.id + " = mp.markers.new(0,new mp.Vector3("+ element.x + ", " + element.y + ", " + element.z + "),2,{color: [77, 216, 49, 255], visible: true, dimension: " + mp.players.local.dimension + "})"
-    eval(marker);
-    markers = markers += 1;
+    markerhandler(element, "load");
 });
 
 mp.events.add("removemarker:client", () => {
-    for(let i=0; i <= markers; i++){
-        let removemarker = "marker" + i + ".destroy()";
-        eval(removemarker);
-    }
+    markerhandler(null, "unload");
 })
+
+function markerhandler(element, state) {
+    if (state === "load") {
+        markers[element.id] = mp.markers.new(0, new mp.Vector3(element.x, element.y, element.z), 2,{color: [77, 216, 49, 255], visible: true, dimension: player.dimension});
+    } else if (state === "unload" && markers.length > 0) {
+        for(let i in markers) {
+            markers[i].destroy();
+        }
+    }
+};

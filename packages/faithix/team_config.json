@@ -2,6 +2,7 @@
     "gf":{
         "Teamname": "Grove",
         "color": 53,
+        "chatcolor": "#33cc33",
         "Spawnpos":{
             "x": 1365.5870361328125,
             "y": -579.159912109375,
@@ -74,12 +75,28 @@
                 "id": 1,
                 "drawable": 8,
                 "texture": 1
+            },
+            {
+                "id": 2,
+                "drawable": 0,
+                "texture":-1
+            },
+            {
+                "id": 6,
+                "drawable":0,
+                "texture":-1
+            },
+            {
+                "id": 7,
+                "drawable":0,
+                "texture":-1
             }
         ]
     },
     "ballas":{
         "Teamname": "Ballas",
         "color": 145,
+        "chatcolor": "#990099",
         "Spawnpos":{
             "x": 101.5816879272461,
             "y": -1939.8582763671875,
@@ -173,6 +190,7 @@
     "lsv":{
         "Teamname": "Vagos",
         "color": 88,
+        "chatcolor": "#ffff00",
         "Spawnpos":{
             "x": -1070.043701171875,
             "y": -1670.76123046875,
@@ -266,6 +284,7 @@
     "rednecks":{
         "Teamname": "Rednecks",
         "color": 133,
+        "chatcolor": "#336600",
         "Spawnpos":{
             "x": 2440.07666015625,
             "y": 5016.8505859375,
@@ -359,6 +378,7 @@
     "mg13":{
         "Teamname": "MG13",
         "color": 70,
+        "chatcolor": "#00ffff",
         "Spawnpos":{
             "x": 1284.652587890625,
             "y": -1596.785400390625,
@@ -452,6 +472,7 @@
     "lcn":{
         "Teamname": "LCN",
         "color": 0,
+        "chatcolor": "#000000",
         "Spawnpos":{
             "x": -1526.486083984375,
             "y": 93.47664642333984,
@@ -479,14 +500,34 @@
                 "texture": 0
             },
             {
+                "id": 5,
+                "drawable": 0,
+                "texture": -1
+            },
+            {
                 "id": 6,
                 "drawable": 36,
                 "texture": 3
             },
             {
+                "id": 7,
+                "drawable": 0,
+                "texture": -1
+            },
+            {
                 "id": 8,
                 "drawable": 71,
                 "texture": 3
+            },
+            {
+                "id": 9,
+                "drawable": 0,
+                "texture": -1
+            },
+            {
+                "id": 10,
+                "drawable": 0,
+                "texture": -1
             },
             {
                 "id": 11,
@@ -504,12 +545,28 @@
                 "id": 1,
                 "drawable": 8,
                 "texture": 2
+            },
+            {
+                "id": 2,
+                "drawable": 0,
+                "texture":-1
+            },
+            {
+                "id": 6,
+                "drawable":0,
+                "texture":-1
+            },
+            {
+                "id": 7,
+                "drawable":0,
+                "texture":-1
             }
         ]
     },
     "triaden":{
         "Teamname": "Triaden",
         "color": 82,
+        "chatcolor": "#0000ff",
         "Spawnpos":{
             "x": 1369.94580078125,
             "y": 1147.543212890625,
@@ -603,6 +660,7 @@
     "lost":{
         "Teamname": "Lost MC",
         "color": 31,
+        "chatcolor": "#996633",
         "Spawnpos":{
             "x": 1984.573974609375,
             "y": 3037.122314453125,

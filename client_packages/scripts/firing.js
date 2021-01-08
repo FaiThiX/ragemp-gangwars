@@ -1,16 +1,17 @@
-let firing = 0;
+global.chatopened = false;
 
-mp.events.add("render", () => {
-    if(firing === 0){
-        mp.game.player.disableFiring(false);
-    };
-    if(firing === 1){
-        mp.game.player.disableFiring(true);
-    };
+mp.keys.bind(0x54, true, (player) => { /// T Key
+    if (chatopened === true) return;
+  	chatopened = true;
+});
+
+mp.keys.bind(0x0D, true, (player) => { /// ENTER Key
+    if (chatopened === false) return;
+     chatopened = false;
 });
 
 mp.keys.bind(0xBC, true, function() {
-    firing = 1;
+    if (chatopened === true) return;
     mp.events.callRemote("heal");
     setTimeout(function(){
         firing = 0;
@@ -18,7 +19,7 @@ mp.keys.bind(0xBC, true, function() {
 });
 
 mp.keys.bind(0xBE, true, function() {
-    firing = 1;
+    if (chatopened === true) return;
     mp.events.callRemote("armor");
     setTimeout(function(){
         firing = 0;

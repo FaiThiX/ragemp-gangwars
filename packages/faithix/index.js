@@ -7,6 +7,7 @@ require("./events/joinevents");
 require("./events/playerdeath");
 require("./events/leaveevents");
 require("./events/teams");
+require("./events/playerchat");
 require("./scripts/ffa");
 require("./scripts/garage");
 require("./scripts/healing");
