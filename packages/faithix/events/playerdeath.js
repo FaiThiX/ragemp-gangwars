@@ -2,7 +2,7 @@ const teams = require("../team_config");
 
 mp.events.add("playerDeath", (player, reason, killer) => {
     try {
-        if(player){
+        if(mp.players.exists(player)){
             if (player.respawnTimer) clearTimeout(player.respawnTimer);
 
             if(player.cayo === true){
