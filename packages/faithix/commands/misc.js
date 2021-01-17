@@ -8,7 +8,7 @@ mp.events.addCommand("pos",(player) => {
 });
 
 mp.events.addCommand("car",(player, vehName = "faggio")=>{
-    if(player.isffa === 0){
+    if(player.isffa === 0 && mp.players.exists(player)){
         if (player) {
             let pos = player.position;
             let veh = mp.vehicles.new(mp.joaat(vehName),pos)

@@ -33,6 +33,7 @@ mp.events.add("playerDeath", (player, reason, killer) => {
             }
             else {
                 player.respawnTimer = setTimeout(() => {
+                    console.log("[DEATH] Player: " + player.name + " died because " + reason + " !")
                     if (killer === undefined){
                         player.deaths = player.deaths += 1;
                     };
