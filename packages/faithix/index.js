@@ -3,6 +3,7 @@ require("./commands/clothes");
 require("./commands/misc");
 require("./commands/teleport");
 require("./commands/weapons");
+require("./commands/faction")
 require("./events/joinevents");
 require("./events/playerdeath");
 require("./events/leaveevents");

@@ -1,0 +1,14 @@
+
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  expected multiplayer object
+Aborted
+
+
+/home/rage/devserver/packages/faithix/events/playerdeath.js:44
+                    player.spawn(teams[player.currentTeam].Spawnpos);
+                           ^
+
+Error: expected multiplayer object
+    at Timeout.player.respawnTimer.setTimeout [as _onTimeout] (/home/rage/devserver/packages/faithix/events/playerdeath.js:44:28)
+    at listOnTimeout (timers.js:324:15)
+    at processTimers (timers.js:268:5)
