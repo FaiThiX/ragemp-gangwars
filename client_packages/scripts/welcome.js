@@ -12,7 +12,7 @@ mp.events.add("guiReady", () => {
     sharedVariables.localPlayer.setCoords(cameraPos.x, cameraPos.y, cameraPos.z - 5.0, false, false, false, false);
     sharedVariables.localPlayer.freezePosition(true);
     accountCamera.setActive(true);
-    accountBrowser = mp.browsers.new("package://cef/welcome.html");
+    accountBrowser = mp.browsers.new("package://ui/html/welcome.html");
 
     mp.gui.chat.show(false);
     mp.game.ui.displayRadar(false);

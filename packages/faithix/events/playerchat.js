@@ -8,7 +8,7 @@ mp.events.add("playerChat", (player, message) => {
     
     if(player.health <= 0) return;
     
-    if(chatenabled == true){
+    if(chatenabled == true || player.admin > 5){
         mp.players.broadcast(`!{${chatcolor}}${player.name}: !{#FFFFFF}${message}`);
     };
 });

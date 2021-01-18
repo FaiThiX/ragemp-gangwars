@@ -1,25 +1,5 @@
 const database = require("../corestuff/mysql").getPool();
 
-/* mp.events.addCommand("setcars", (player, faction) => {
-    database.query("SELECT * FROM faction_cars WHERE faction=?", [faction], (result,error) => {
-        if(error) throw error;
-        console.log(result);
-        console.log(faction);
-        if(mp.players.exists(player)){
-            if(player.admin > 3){
-                console.log(result);
-                for(let i in result) {
-                    let veh = mp.vehicles.new(mp.joaat(result[i].car),(result[i].pos_x,result[i].pos_y,result[i].pos_z))
-                        veh.dimension = 0;
-                        veh.numberPlate = result[i].faction;
-                        veh.setColor(teams[result[i].faction].color, teams[result[i].faction].color);
-                        veh.heading = (result[i].heading_x,result[i].heading_y,result[i].heading_z);
-                };
-            };
-        };
-    });
-}); */
-
 mp.events.addCommand("loadcars", (player, faction) => {
     if(player.admin > 5){
         let query = "SELECT * FROM faction_cars WHERE faction=?"
@@ -51,9 +31,11 @@ mp.events.addCommand("savecar", (player, faction) => {
     };
 });
 
-mp.events.addCommand("rota", (player, _, x, y, z) => {
+mp.events.addCommand("rota", (player, heading) => {
     let vehicle = player.vehicle;
-    vehicle.rotation = new mp.Vector3(x, y, z)
+    console.log(vehicle.heading); //for debuging
+    vehicle.heading = Number(heading);
+    console.log(vehicle.heading); //for debuging
 });
 
 mp.events.addCommand("debugcar", (player, faction) => {
