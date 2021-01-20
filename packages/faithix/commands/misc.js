@@ -92,3 +92,8 @@ mp.events.addCommand("setspawn", (player, ffa) => {
 mp.events.addCommand("removemarker",(player) => {
     player.call("removemarker:client");
 });
+
+mp.events.addCommand("mod", (player, _, modtype, modindex) => {
+    vehicle = player.vehicle;
+    vehicle.setMod(parseInt(modtype), parseInt(modindex));
+});

@@ -22,6 +22,7 @@ database.query("SELECT * from colshapes", (error, result) => {
     for(let i = 0; i < result.length; i++){
         garage_colshapes[result[i].id] = mp.colshapes.newSphere(result[i].x, result[i].y, result[i].z, result[i].size, result[i].dim );
         garage_colshapes[result[i].id].styletype = "garage";
+        garage_colshapes[result[i].id].frak = result[i].frak;
     };
 });
 
@@ -48,25 +49,25 @@ mp.events.add("spawncar:server", (player, args) => {
     
     if(player.isffa === 0 && mp.players.exists(player)){
         if (args < 8) {
-            let pos = garage_config[player.currentTeam].spawnpoint_car
+            let pos = garage_config[player.getVariable("shapedata").frak].spawnpoint_car
             let veh = mp.vehicles.new(mp.joaat(car),pos, {
-                heading: parseInt(garage_config[player.currentTeam].heading_car),
                 dimension: player.dimension
             });
+            veh.rotation = garage_config[player.getVariable("shapedata").frak].rotation_car;
             veh.numberPlate = teams[player.currentTeam].Teamname;
             veh.setColor(teams[player.currentTeam].color, teams[player.currentTeam].color);
             veh.spawnedBy = player.name;
             veh.modelname = car;
             player.putIntoVehicle(veh, -1);
         }else if(args == 8){
-            let pos = garage_config[player.currentTeam].spawnpoint_heli;
+            let pos = garage_config[player.getVariable("shapedata").frak].spawnpoint_heli;
             let veh = mp.vehicles.new(mp.joaat(car),pos)
             veh.dimension = player.dimension;
             veh.numberPlate = teams[player.currentTeam].Teamname;
             veh.setColor(teams[player.currentTeam].color, teams[player.currentTeam].color);
             veh.spawnedBy = player.name;
             veh.modelname = car;
-            veh.heading = garage_config[player.currentTeam].heading_heli;
+            veh.rotation = garage_config[player.getVariable("shapedata").frak].rotation_heli;
             player.putIntoVehicle(veh, -1);
         }
     }
