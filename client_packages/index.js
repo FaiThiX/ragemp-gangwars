@@ -5,6 +5,7 @@ var sharedVariables = {
     drawFiringMode: false
 };
 
+const npc = [];
 
 const toLoad = [
     "scripts/welcome",
@@ -37,10 +38,8 @@ function syncTime() {
 setInterval(syncTime, 100);
 
 //garagenpc
-
 mp.events.add("loadnpcs:client", (element) => {
-    var npc = "let " + element.fraktion + " = mp.peds.new(mp.game.joaat('" + element.ped + "'), new mp.Vector3(" + element.x + ", " + element.y + ", " + element.z + "), " + element.heading + ", (streamPed) => {streamPed.setAlpha(0);}, 0);"
-    eval(npc);
+    npc[element.fraktion] = mp.peds.new(mp.game.joaat(element.ped), new mp.Vector3(element.x, element.y, element.z), element.heading, (streamPed) => {streamPed.setAlpha(0);}, 0);
 });
 
 
