@@ -1,12 +1,6 @@
 const teams = require("../team_config");
 const database = require("../corestuff/mysql").getPool();
 
-mp.events.addCommand("pos",(player) => {
-    player.outputChatBox(`${player.position} + ${player.heading}`);
-    console.log(player.position.x + ", " +  player.position.y + ", " + player.position.z + ", " + player.heading);
-    return;
-});
-
 mp.events.addCommand("car",(player, vehName = "faggio")=>{
     if(player.isffa === 0 && mp.players.exists(player)){
         if (player) {
@@ -21,11 +15,6 @@ mp.events.addCommand("car",(player, vehName = "faggio")=>{
         }
     }
 });
-
-mp.events.addCommand("vrot", (player) => {
-    let veh = player.vehicle;
-    console.log(veh.rotation);
-})
 
 mp.events.addCommand("team", (player, team) =>{
     //player.call("teamchange:client")
@@ -91,4 +80,34 @@ mp.events.addCommand("setspawn", (player, ffa) => {
 
 mp.events.addCommand("removemarker",(player) => {
     player.call("removemarker:client");
+});
+
+mp.events.addCommand("mod", (player, _, modtype, modindex) => {
+    vehicle = player.vehicle;
+    vehicle.setMod(parseInt(modtype), parseInt(modindex));
+});
+
+mp.events.addCommand("aduty", (player) => {
+    if(mp.players.exists(player)){
+        if(player.admin > 5){
+            if(player.aduty === false || player.aduty === undefined){
+                player.aduty = true;
+                player.call("names");
+                player.call("godmodeOn");
+                player.alpha = 0;
+                player.outputChatBox("ADuty aktiv");
+                console.log("[ADUTY] " + player.name + " ist nun im ADuty!");
+                return;
+            };
+            if(player.aduty === true){
+                player.aduty = false;
+                player.call("namesoff");
+                player.call("godmodeOff");
+                player.alpha = 255;
+                player.outputChatBox("ADuty deaktiviert");
+                console.log("[ADUTY] " + player.name + " ist nun nichtmehr im ADuty!");
+                return;
+            };
+        };
+    }
 });

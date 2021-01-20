@@ -13,7 +13,8 @@ const toLoad = [
     "scripts/killfeed",
     "scripts/animsync",
     "scripts/cayo",
-    "scripts/misc"
+    "scripts/misc",
+    "scripts/garage"
 ];
 
 

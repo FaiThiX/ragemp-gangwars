@@ -1,5 +1,4 @@
 const cameraPos = new mp.Vector3(1865.045, -1754.456, 205.8218);
-const cameraLookAtPos = new mp.Vector3(622.8427, -1553.021, 195.4714);
 
 let accountBrowser = undefined;
 let accountCamera = mp.cameras.new("accountCamera", cameraPos, new mp.Vector3(0.0, 0.0, 63.0), 24);
@@ -12,7 +11,7 @@ mp.events.add("guiReady", () => {
     sharedVariables.localPlayer.setCoords(cameraPos.x, cameraPos.y, cameraPos.z - 5.0, false, false, false, false);
     sharedVariables.localPlayer.freezePosition(true);
     accountCamera.setActive(true);
-    accountBrowser = mp.browsers.new("package://cef/welcome.html");
+    accountBrowser = mp.browsers.new("package://ui/html/teamSelect.html");
 
     mp.gui.chat.show(false);
     mp.game.ui.displayRadar(false);
@@ -27,7 +26,6 @@ mp.events.add("selectteam:client", (frak) => {
 })
 
 mp.events.add("closefrakbrowser:client", () =>{
-    accountBrowser.active = false;
     accountBrowser.destroy();
 
     accountCamera.setActive(false);
@@ -42,20 +40,4 @@ mp.events.add("closefrakbrowser:client", () =>{
         mp.gui.chat.show(true);
         mp.events.callRemote("requestSpawn:server")
     }, 300);
-})
-
-mp.events.add("teamchange:client", () => {
-    sharedVariables.localPlayer.setCoords(cameraPos.x, cameraPos.y, cameraPos.z - 5.0, false, false, false, false);
-    sharedVariables.localPlayer.freezePosition(true);
-    sharedVariables.localPlayer.setAlpha(0)
-    sharedVariables.localPlayer.setInvincible(true)
-    accountCamera.setActive(true);
-    accountBrowser = mp.browsers.new("package://cef/welcome.html");
-
-    mp.gui.chat.show(false);
-    mp.game.ui.displayRadar(false);
-    mp.game.cam.renderScriptCams(true, false, 0, true, false);
-    setTimeout(function(){
-        mp.gui.cursor.show(false,true)
-    },150) 
 });

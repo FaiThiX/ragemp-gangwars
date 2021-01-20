@@ -28,6 +28,7 @@ database.query("SELECT * FROM ffa_spawns", (error, result) => {
 
 //Create FFA Colshape's
 let ffa1 = mp.colshapes.newSphere(198.4713134765625, -936.09033203125, 24.13947868347168, 101, 1001);
+ffa1.styletype = "ffa";
 
 //Marker loader from SQL
 database.query("SELECT * FROM markers", (error, result) => {
@@ -43,7 +44,7 @@ database.query("SELECT * FROM markers", (error, result) => {
 });
 
 function playerExitColshapeHandler(player, shape) {
-  if(shape == ffa1) {
+  if(shape.styletype === "ffa") {
     if(player.isffa === 1){
         player.health = 0;
     };
@@ -60,7 +61,7 @@ mp.events.add("spawnffa:server", (player) => {
 
 mp.events.addCommand("ffa", (player, ffanr) => {
     if(player.isffa === 0){
-        if(ffanr === "1"){
+        if(ffanr > 0 && ffanr < 2){
             ffanr = Number(ffanr);
             player.isffa = 1;
             player.whatffa = ffanr;
