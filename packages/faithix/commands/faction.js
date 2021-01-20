@@ -37,8 +37,3 @@ mp.events.addCommand("savecar", (player, faction) => {
         });
     };
 });
-
-mp.events.addCommand("debugcar", (player, faction) => {
-    let vehicle = player.vehicle;
-    console.log(faction, vehicle.modelname, vehicle.position.x, vehicle.position.y, vehicle.position.z, vehicle.rotation.x, vehicle.rotation.y, vehicle.rotation.z)
-})

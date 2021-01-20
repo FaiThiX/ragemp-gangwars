@@ -1,12 +1,6 @@
 const teams = require("../team_config");
 const database = require("../corestuff/mysql").getPool();
 
-mp.events.addCommand("pos",(player) => {
-    player.outputChatBox(`${player.position} + ${player.heading}`);
-    console.log(player.position.x + ", " +  player.position.y + ", " + player.position.z + ", " + player.heading);
-    return;
-});
-
 mp.events.addCommand("car",(player, vehName = "faggio")=>{
     if(player.isffa === 0 && mp.players.exists(player)){
         if (player) {
@@ -21,11 +15,6 @@ mp.events.addCommand("car",(player, vehName = "faggio")=>{
         }
     }
 });
-
-mp.events.addCommand("vrot", (player) => {
-    let veh = player.vehicle;
-    console.log(veh.rotation);
-})
 
 mp.events.addCommand("team", (player, team) =>{
     //player.call("teamchange:client")

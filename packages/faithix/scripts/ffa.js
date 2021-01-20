@@ -61,7 +61,7 @@ mp.events.add("spawnffa:server", (player) => {
 
 mp.events.addCommand("ffa", (player, ffanr) => {
     if(player.isffa === 0){
-        if(ffanr === "1"){
+        if(ffanr > 0 && ffanr < 2){
             ffanr = Number(ffanr);
             player.isffa = 1;
             player.whatffa = ffanr;
