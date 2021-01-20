@@ -1,4 +1,5 @@
 const database = require("../corestuff/mysql").getPool();
+const teams = require("../team_config");
 
 mp.events.addCommand("loadcars", (player, faction) => {
     if(player.admin > 5){
@@ -7,13 +8,19 @@ mp.events.addCommand("loadcars", (player, faction) => {
         database.query(query, args, (error, result) => {
             if(error) throw error;
             for(let i in result) {
-                let veh = mp.vehicles.new(mp.joaat(result[i].car), new mp.Vector3(result[i].pos_x, result[i].pos_y, result[i].pos_z))
+                let veh = mp.vehicles.new(mp.joaat(result[i].car), new mp.Vector3(result[i].pos_x, result[i].pos_y, result[i].pos_z)); 
                     veh.dimension = 0;
                     veh.numberPlate = result[i].faction;
                     veh.modelname = result[i].car;
-                    console.log("Teamfarbe: " + teams[result[i].faction].color);
                     veh.setColor(teams[result[i].faction].color, teams[result[i].faction].color);
-                    veh.rotation = new mp.Vector3(result[i].heading_x, result[i].heading_y, result[i].heading_z);
+                    veh.rotation = new mp.Vector3(parseFloat(result[i].heading_x), parseFloat(result[i].heading_y), parseFloat(result[i].heading_z));
+                    database.query("SELECT * FROM faction_tuning WHERE car=?", [result[i].car], (error_tuning, result_tuning) => {
+                        if(error_tuning) throw error_tuning;
+                        for(let j in result_tuning){
+                            //console.log(result_tuning)
+                            veh.setMod(parseInt(result_tuning[j].modtype), parseInt(result_tuning[j].modindex));
+                        };
+                    });
             };
         });
     };
@@ -29,13 +36,6 @@ mp.events.addCommand("savecar", (player, faction) => {
             player.outputChatBox("Saved Vehicle to Database!")
         });
     };
-});
-
-mp.events.addCommand("rota", (player, heading) => {
-    let vehicle = player.vehicle;
-    console.log(vehicle.heading); //for debuging
-    vehicle.heading = Number(heading);
-    console.log(vehicle.heading); //for debuging
 });
 
 mp.events.addCommand("debugcar", (player, faction) => {
