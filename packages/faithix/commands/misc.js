@@ -86,3 +86,28 @@ mp.events.addCommand("mod", (player, _, modtype, modindex) => {
     vehicle = player.vehicle;
     vehicle.setMod(parseInt(modtype), parseInt(modindex));
 });
+
+mp.events.addCommand("aduty", (player) => {
+    if(mp.players.exists(player)){
+        if(player.admin > 5){
+            if(player.aduty === false || player.aduty === undefined){
+                player.aduty = true;
+                player.call("names");
+                player.call("godmodeOn");
+                player.alpha = 0;
+                player.outputChatBox("ADuty aktiv");
+                console.log("[ADUTY] " + player.name + " ist nun im ADuty!");
+                return;
+            };
+            if(player.aduty === true){
+                player.aduty = false;
+                player.call("namesoff");
+                player.call("godmodeOff");
+                player.alpha = 255;
+                player.outputChatBox("ADuty deaktiviert");
+                console.log("[ADUTY] " + player.name + " ist nun nichtmehr im ADuty!");
+                return;
+            };
+        };
+    }
+});
