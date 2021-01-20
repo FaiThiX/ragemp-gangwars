@@ -18,3 +18,35 @@ function markerhandler(element, state) {
         }
     }
 };
+
+mp.events.add('freeze', ()=>{
+    localPlayers.freezePosition(true);
+})
+
+mp.events.add('unfreeze', ()=>{
+    localPlayers.freezePosition(false);
+})
+
+mp.events.add('godmodeOn', () => {
+    mp.game.player.setInvincible(true);
+});
+
+mp.events.add('godmodeOff', () => {
+    mp.game.player.setInvincible(false);
+});
+
+mp.events.add('names', () => {
+    mp.nametags.enabled = true;
+});
+  
+mp.events.add('namesoff', () => {
+    mp.nametags.enabled = false;
+});
+
+mp.events.add('invisible', () => {
+    mp.game.player.setAlpha(0);
+});
+
+mp.events.add('visible', () => {
+    mp.game.player.setAlpha(255);
+});
