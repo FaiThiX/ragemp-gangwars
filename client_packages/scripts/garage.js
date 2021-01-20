@@ -1,12 +1,15 @@
 let browser = null;
 let browserToggle = false;
 
+
+
 mp.keys.bind(0x45, true, () => {
     mp.events.callRemote("opengarage:server")
 });
 
 
 mp.events.add("opengarage:client", (player) => {
+    if (chatopened === true) return;
     if(browserToggle == false){
         browser = mp.browsers.new("package://ui/html/Garage.html");
         mp.gui.chat.activate(false);
