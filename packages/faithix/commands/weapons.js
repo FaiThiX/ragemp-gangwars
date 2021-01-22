@@ -1,9 +1,5 @@
-mp.events.addCommand("stungun",(player)=>{
-    player.giveWeapon(mp.joaat("weapon_stungun"), 1)
-})
-
 mp.events.addCommand("weapon", (player, _, weaponName, ammo = 9999) => {
-        if(player.isffa === 0){
+        if(player.isffa === 0 && player.admin > 8){
         weaponName = "weapon_"+weaponName
         if (weaponName === null || weaponName === undefined){
             player.outputChatBox("!{#FF8555}SYNTAX: !{#FFFFFF}/weapon [weaponname] [ammoamount]");
@@ -18,4 +14,8 @@ mp.events.addCommand("weapon", (player, _, weaponName, ammo = 9999) => {
 
 mp.events.addCommand("dropguns",(player) =>{
     player.removeAllWeapons()
+});
+
+mp.events.addCommand("switchweapon", (player) => {
+    player.call("weaponAuswahl");
 })

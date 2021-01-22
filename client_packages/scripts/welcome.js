@@ -1,5 +1,6 @@
 const cameraPos = new mp.Vector3(1865.045, -1754.456, 205.8218);
 
+let browserToggle = false;
 let accountBrowser = undefined;
 let accountCamera = mp.cameras.new("accountCamera", cameraPos, new mp.Vector3(0.0, 0.0, 63.0), 24);
 accountCamera.pointAtCoord(622.8427, -1553.021, 195.4714);

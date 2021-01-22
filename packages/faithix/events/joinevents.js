@@ -3,12 +3,11 @@ var date = require("moment");
 var formatdate = date().format("MM/dd/yyyy h:mm:ss")
 
 mp.events.add('playerSpawn', (player) => {
-    player.giveWeapon([2937143193,1649403952,1627465347,3523564046],1000);
     player.armourused = 0;
     player.healused = 0;
     player.health = 100;
     player.armour = 100;
-})
+});
 
 mp.events.add("playerJoin", (player) => {
     database.query("SELECT * FROM npc", (error, result) => {

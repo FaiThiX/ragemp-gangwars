@@ -1,0 +1,55 @@
+body{
+    background-color: transparent;
+    box-shadow: 8px 8px 80px black;
+}
+html{
+    user-select: none;
+}
+.area{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.Box{
+    transform: skewX(2deg);    
+    background-color: rgba(83, 83, 83, 0.69);
+    width: 1250px;
+    height: 680px;
+    border: solid 5px rgba(78, 78, 78, 0.589);
+    box-shadow: 8px 8px 80px rgb(59, 59, 59); 
+    transform-box: skewX(-2deg);
+}
+.contentBox{
+    color: white;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transform: skewX(-2deg);
+    
+}
+.contentBox h1{
+    padding: 2rem;
+}
+li{
+    display: inline;
+}
+ul{
+    display: table; 
+    margin: 0 auto;
+}
+button{
+    background-color: transparent;
+    border: none;
+}
+.Logo{
+    margin-left: 35%;
+    margin-top: 0%;
+    opacity: 0.5;
+}
+
+#closeBTN{
+    position: absolute;
+    margin-top: 40%;
+    right: 0%;
+    color: white;
+}

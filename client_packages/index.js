@@ -15,7 +15,8 @@ const toLoad = [
     "scripts/animsync",
     "scripts/cayo",
     "scripts/misc",
-    "scripts/garage"
+    "scripts/garage",
+    "scripts/weaponSelect"
 ];
 
 
