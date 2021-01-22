@@ -43,10 +43,14 @@ mp.events.add('namesoff', () => {
     mp.nametags.enabled = false;
 });
 
-mp.events.add('invisible', () => {
-    mp.game.player.setAlpha(0);
+mp.events.add("playerEnterVehicle", (vehicle, seat) => {
+    vehicle.setInvincible(false);
 });
 
-mp.events.add('visible', () => {
-    mp.game.player.setAlpha(255);
+mp.events.add("playerExitVehicle", (vehicle, seat) => {
+    vehicle.setInvincible(false);
+});
+
+mp.events.add("entityStreamIn", (entity) => {
+    entity.setInvincible(false);
 });
