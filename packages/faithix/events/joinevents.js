@@ -45,6 +45,13 @@ mp.events.add("playerJoin", (player) => {
             player.sqlid = result[0].id;
             console.info("Loaded SQL user for " + player.name);
         };
+
+        setInterval(() => {
+            database.query("UPDATE users SET kills=?, deaths=? WHERE socialclub=?",[player.kills, player.deaths, player.socialClub], (error, result) => {
+                if(error) throw error;
+            });
+            player.outputChatBox("Account saved!");
+        }, 300000);
     });
     
     player.dimension = 0;
